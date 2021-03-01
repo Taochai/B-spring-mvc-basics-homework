@@ -1,8 +1,8 @@
 package com.thoughtworks.capacity.gtb.mvc.service;
 
-import com.thoughtworks.capacity.gtb.mvc.UserNameAlreadyExistException;
 import com.thoughtworks.capacity.gtb.mvc.entity.User;
-import com.thoughtworks.capacity.gtb.mvc.UserNotfoundException;
+import com.thoughtworks.capacity.gtb.mvc.exception.UserNameAlreadyExistException;
+import com.thoughtworks.capacity.gtb.mvc.exception.UserNotfoundException;
 import lombok.Getter;
 import org.springframework.stereotype.Service;
 
@@ -11,8 +11,9 @@ import java.util.List;
 import java.util.function.Supplier;
 
 @Service
+@Getter
 public class UserService {
-    @Getter
+
     List<User> userList;
 
     public UserService() {

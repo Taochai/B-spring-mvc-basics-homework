@@ -1,4 +1,4 @@
-package com.thoughtworks.capacity.gtb.mvc;
+package com.thoughtworks.capacity.gtb.mvc.exception;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

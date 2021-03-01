@@ -1,6 +1,4 @@
-package com.thoughtworks.capacity.gtb.mvc;
-
-import java.util.function.Supplier;
+package com.thoughtworks.capacity.gtb.mvc.exception;
 
 public class UserNotfoundException extends RuntimeException {
     public UserNotfoundException(String message) {
