@@ -8,7 +8,6 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Supplier;
 
 @Service
 @Getter
@@ -41,20 +40,7 @@ public class UserService {
         return userList.stream().
                 filter(user -> user.getUsername().equals(username) && user.getPassword().equals(password))
                 .findAny()
-                .orElseThrow(new UserNotfoundExceptionSupplier("用户名或密码错误"));
-
+                .orElseThrow(() -> new UserNotfoundException("用户名或密码错误~~~"));
     }
 
-    private static class UserNotfoundExceptionSupplier implements Supplier<UserNotfoundException> {
-        UserNotfoundException userNotfoundException;
-
-        public UserNotfoundExceptionSupplier(String message) {
-            this.userNotfoundException = new UserNotfoundException(message);
-        }
-
-        @Override
-        public UserNotfoundException get() {
-            return this.userNotfoundException;
-        }
-    }
 }
